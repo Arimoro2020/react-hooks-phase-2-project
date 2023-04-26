@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react'
+import Clock from './Clock';
+
 
 const apiKey = `M8hsBtQcuiZFM4pD0mGiDAa0UMbA0UaQ`
-let country = 'US'
+// let country = 'US'
 
 
 function Home(){
@@ -23,7 +25,9 @@ function Home(){
 
     useEffect(fetchTopHeadlines, [newsUrl]) 
 
-
+   
+      
+    
    
     
        
@@ -41,7 +45,10 @@ function Home(){
   
     
    
-    return (<div>{renderArticles  }</div>);
+    return (<div>
+        <h1 style={{textAlign: 'center', textJustify: 'center'}}>Top Headlines <Clock /></h1>
+        {renderArticles  }
+        </div>);
 }
 
 

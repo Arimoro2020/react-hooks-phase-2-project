@@ -5,6 +5,7 @@ import Source from './Source.js';
 import Favorites from './Favorites.js';
 import NavBar from './NavBar.js';
 import {Route, Switch} from 'react-router-dom';
+import DarkMode from './DarkMode';
 
 
 
@@ -14,7 +15,7 @@ function App() {
      
 
   return (<div>
-           <NavBar />
+           <NavBar /> <DarkMode />
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route path="/category"><Category /></Route>
