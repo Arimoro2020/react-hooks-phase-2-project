@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
+import Card from './Card'
 import Clock from './Clock';
+import './../index.css'
 
 
 const apiKey = `M8hsBtQcuiZFM4pD0mGiDAa0UMbA0UaQ`
@@ -31,16 +33,8 @@ function Home(){
    
     
        
-     const renderArticles = topHeadlines.map(article => 
-     
-           <div style={{ paddingTop: 20 , paddingBottom: 20}}>
-           <h3 style={{textAlign: 'center', textJustify: 'center'}}>{article.title}</h3>
-           <figure>
-           <img src={article.multimedia[0].url} alt={article.multimedia[0].caption}  style={{ display: 'block', width: 850 , height: 550, marginLeft: 'auto', marginRight: 'auto'}} />
-           <figcaption style={{textAlign: 'center', textJustify: 'center', fontSize:'smaller'}}>{article.abstract}</figcaption>
-           </figure>
-           {/* <pre style={{textAlign: 'center', textJustify: 'center', fontSize: 'medium'}}>{article.content}</pre> */}
-           </div>)
+     const renderArticles = topHeadlines.map(
+        article => <Card key={article.id} {...article} />)
           
   
     
