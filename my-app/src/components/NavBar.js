@@ -15,7 +15,7 @@ function NavBar() {
                             
 
 return ( <div>
-        <NavLink  to="/" exact
+        <NavLink  exact to="/home" 
         style={linkStyles}
         activeStyle={{
           background: "darkblue",
