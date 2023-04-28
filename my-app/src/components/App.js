@@ -17,26 +17,46 @@ const apiKey = `tCiVgagD00AfGyGIE6MIdt8DFubW1hgU`
 
 function App() {
  
-
-     
  const [topHeadlines, setTopHeadlines] = useState([])
+//  const [withError, setWithError] = useState(false)
+
+//  const [favorites, setFavorites] = useState([])
 
  let location =useLocation()
 
  const baseUrl = `https://api.nytimes.com/svc/topstories/v2`
  let newsUrl = baseUrl + `/${location.pathname}.json?api-key=${apiKey}`
 
+//  function handleOnClick(){
+//   setFavorites(favorites=>!favorites)
+//  }
 
-const fetchTopHeadlines = () => {
-   fetch(newsUrl)
-   .then(res => res.json())
-   .then(headlinesData=>setTopHeadlines(headlinesData.results))
-   .catch(error=>console.log(error))
 
-}
-   console.log(topHeadlines)
-//    
- useEffect(fetchTopHeadlines, []) 
+   const fetchTopHeadlines = () => {
+      fetch(newsUrl)
+      .then(res => res.json())
+      .then(headlinesData=>setTopHeadlines(headlinesData.results))
+      .catch(error=>console.log(error))
+
+   }
+   // console.log(topHeadlines)
+
+   // function handleError(){
+   //    setWithError(withError=>!withError)
+   // }
+ 
+ 
+   useEffect(fetchTopHeadlines, [newsUrl]) 
+ 
+   
+   // if (withError) return <h2>Currently not available!</h2>
+ 
+  
+  
+   
+     
+    
+
 
   return (
            <div>
@@ -47,7 +67,7 @@ const fetchTopHeadlines = () => {
             <Route path="/business"><Business location={location} topHeadlines={topHeadlines}/></Route>
             <Route path="/health"><Health location={location} topHeadlines={topHeadlines}/></Route>
             <Route path="/world"><World location={location} topHeadlines={topHeadlines}/></Route>
-            <Route path="/favorites"><Favorites location={location} topHeadlines={topHeadlines}/></Route>
+            <Route path="/favorites"><Favorites location={location} topHeadlines={topHeadlines} /></Route>
             </Switch>
             </div>)
             

@@ -29,7 +29,8 @@ code {
   
   .article-image {
     display: 'block';
-    height: 200px;
+    height: 250px;
+    width: 480px;
     margin-left: 'auto';
     margin-right: 'auto';
     display: inline-block;
@@ -50,11 +51,16 @@ code {
     font-weight: 500
   }
   .article-card {
+    display:'grid';
+    margin-left: auto;
+    margin-right: auto;
+    width: 44%;
     padding-top: 20px;
     padding-bottom: 30px;
     min-height: 400px;
-    background-color: bisque;
-    padding: 20px;
-    border-radius: 30px;
-    margin: 50px;
+    background-color: #D6CE15;
+    padding: 20px; 
+    /* border-radius: 30px;  */
+    /* margin: 50px; */
+    color:#333;
   }

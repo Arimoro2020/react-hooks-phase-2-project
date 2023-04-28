@@ -12,13 +12,13 @@ export default function Card(props) {
     let articleImage = {...props.multimedia[0]}
 
     return(
-        <div className="article-card">
+        <div className="article-card" style={{opacity: 12}}>
             <figure>
             <span>
-                <button onClick={() => articleImage={...props.multimedia[1]}}>prev</button>
+                <button onClick={() => articleImage={...props.multimedia[1]}} style={{background: "#1F6521", color:"white"}}>prev</button>
                 <img src={articleImage.url} alt={articleImage.caption} className="article-image"/>
                 {/* <figcaption className="article-caption">{articleImage.caption}</figcaption> */}
-                <button>next</button>
+                <button style={{background: "#1F6521", color:"white"}}>next</button>
             </span>
             </figure>
             <section>
@@ -26,7 +26,7 @@ export default function Card(props) {
                 <p className="article-info"> {props.byline} | Date Posted: {props.published_date} | Link: {} </p>
                 <p className="article-description"> {props.abstract} </p>
             </section>
-            <button className="favorite">Add to Favorites</button>
+            <button className="favorite" onClick={props.handleOnClick} style={{background: "#1F6521", color:"white"}}>Add to Favorites</button>
         </div>
 
         // <section className="article-card">
